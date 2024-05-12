@@ -1,0 +1,62 @@
+.input-form {
+    max-width: 600px;
+}
+.submitbtn{
+    margin-top: 5%;
+}
+
+
+.sellbg{
+    opacity: 98%;
+    background-image: url("/images/pexels-olly-3760067.jpg");
+    background-size: cover;
+    padding-bottom: 50px;
+ }
+
+
+.form-bg{
+    background-color: rgb(247, 247, 227);
+    opacity: 78%;
+    top: 50%;
+    left: 50%;
+}
+.sell-nav{
+    background-color: rgb(18, 18, 18);
+    
+}
+.buy-nav{
+    background-color: rgb(1, 2, 3);
+
+}
+.about-nav{
+    background-color: rgb(3, 6, 7);
+
+}
+.full{
+    background-color: bisque;
+}
+.intro{
+    margin-top: 200px;
+    text-align: center;
+    margin-bottom: 200px;
+}
+.buy{
+    margin-right: 5%;
+}
+
+.logoimg{
+    position: absolute;
+    height: auto;
+    left: 0px;
+    width: 65px;
+}
+
+@media (max-width: 601px) {
+    .logoimg{
+        height: 56px;
+    }
+}
+
+    
+
+
