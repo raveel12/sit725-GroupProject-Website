@@ -1,0 +1,22 @@
+{
+  "name": "realtyease",
+  "version": "1.0.0",
+  "description": "RealtyEase project for sit725",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raveel12/sit725-GroupProject-Website.git"
+  },
+  "author": "varun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raveel12/sit725-GroupProject-Website/issues"
+  },
+  "homepage": "https://github.com/raveel12/sit725-GroupProject-Website#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
