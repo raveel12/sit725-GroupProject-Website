@@ -16,13 +16,14 @@ async function getAllListings() {
 async function addListing(data) {
   try {
     const listing = {
-      owner_name: data.owner_name,
-      owner_age: data.owner_age,
-      house_number: data.house_number,
+      owner_name: data.oname,
+      owner_age: data.oage,
+      house_number: data.hno,
       street: data.street,
       suburb: data.suburb,
       state: data.state,
-      area_code: data.area_code,
+      area_code: data.acode,
+      img_path: data.path,
     };
     const result = await collection.insertOne(listing);
   } catch (err) {
@@ -34,13 +35,14 @@ async function addListing(data) {
 async function updateListing(id, data) {
   try {
     const listing = {
-      owner_name: data.owner_name,
-      owner_age: data.owner_age,
-      house_number: data.house_number,
+      owner_name: data.oname,
+      owner_age: data.oage,
+      house_number: data.hno,
       street: data.street,
       suburb: data.suburb,
       state: data.state,
-      area_code: data.area_code,
+      area_code: data.acode,
+      img_path: data.path,
     };
     const result = await collection.replaceOne(
       { _id: new ObjectId(id) },
@@ -52,7 +54,7 @@ async function updateListing(id, data) {
   }
 }
 
-async function deleteListing(id, data) {
+async function deleteListing(id) {
   try {
     const result = await collection.deleteOne({ _id: new ObjectId(id) });
   } catch (err) {

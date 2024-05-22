@@ -29,34 +29,37 @@ function addCards(cards) {
 }
 function submitForm() {
     let formData = {
+        oname: document.getElementById('oname').value,
+        oage: document.getElementById('oage').value,
         path: document.getElementById('img_path').value,
         hno: document.getElementById('hnumber').value,
         street: document.getElementById('street').value,
         suburb: document.getElementById('suburb').value,
         state: document.getElementById('state').value,
-        code: document.getElementById('code').value
+        acode: document.getElementById('acode').value
     };
     console.log("Form Submitted: ", formData);
-    postCities(formData);
+    postListing(formData);
 };
 
 const getCards = () => {
-    $.get('/api/projects/cities', (response) => {
+    $.get('/api/listings/', (response) => {
         if (response.statusCode == 200) {
             addCards(response.data);
         }
     })
 }
-const postCities = (formData) => {
-    $.post('/api/projects/cities', formData);
+const postListing = (formData) => {
+    $.post('/api/listings/', formData);
 }
 //Append Everything at the end
 container.appendChild(cardRow);
 body.appendChild(container);
 
 $(document).ready(function () {
-    $("#submit").click(() => {
-        submitForm();
+    $("#submit").click((event) => {
+    event.preventDefault();
+    submitForm();
     });
     getCards();
 });
