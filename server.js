@@ -10,9 +10,11 @@ app.use(express.static(__dirname + "/public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.get("/", (req, res) => {
-  res.redirect("home.html");
-});
+
+// Added ren html to routes and controller files
+// app.get("/", (req, res) => {
+//   res.redirect("home.html");
+// });
 
 app.use("/api/listings", listingsRouter);
 app.listen(port, () => {
