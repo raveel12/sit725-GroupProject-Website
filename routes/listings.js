@@ -3,8 +3,6 @@ const router = express.Router();
 
 const listingsController = require("../controllers/listingsController.js");
 
-router.get('/', listingsController.renHtml);
-
 router.get("/", listingsController.retrieveAllListings);
 
 router.post("/", listingsController.postListing);
