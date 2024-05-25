@@ -16,14 +16,14 @@ async function getAllListings() {
 async function addListing(data) {
   try {
     const listing = {
-      owner_name: data.oname,
-      owner_age: data.oage,
-      house_number: data.hno,
+      oname: data.oname,
+      oage: data.oage,
+      hno: data.hno,
       street: data.street,
       suburb: data.suburb,
       state: data.state,
-      area_code: data.acode,
-      img_path: data.path,
+      acode: data.acode,
+      path: data.path,
     };
     const result = await collection.insertOne(listing);
   } catch (err) {

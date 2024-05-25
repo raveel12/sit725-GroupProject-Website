@@ -1,10 +1,4 @@
 const ListingModel = require("../models/listing");
-// const renHtml = async (req, res) => {
-//   res.render('home.html');
-//   res.render('sell.html');
-//   res.render('buy.html');
-//   res.render('about.html');
-// };
 const retrieveAllListings = async (req, res) => {
   const result = await ListingModel.getAllListings();
   // Print returned documents
@@ -23,6 +17,8 @@ const postListing = async (req, res) => {
     message: "post a listing success",
   });
 };
+
+//Update and Delete afterwards
 
 // const updateListing = async (req, res) => {
 //   await ListingModel.updateListing(req.params.id, req.body);
