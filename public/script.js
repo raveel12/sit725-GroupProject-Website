@@ -13,7 +13,7 @@ function addCards(cards) {
         div.classList.add("col-lg-4", "col-sm-5", "my-2");
         div.innerHTML = `
                 <div class="card text-center">
-                    <img src= "${card.path}" alt="Image${i++}" class="card-img-top">
+                    <img src= "${card.path}" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">Property Details</h5>
                         <p class="card-text lead">${card.hno}</p>

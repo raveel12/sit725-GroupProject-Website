@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 // });
 
 app.use("/api/listings", listingsRouter);
-
+// app.use("/", listingsRouter);
 app.use("/", publicPagesRouter);
 
 app.listen(port, () => {
