@@ -1,10 +1,10 @@
 const ListingModel = require("../models/listing");
-const renHtml = async (req, res) => {
-  res.render('home.html');
-  res.render('sell.html');
-  res.render('buy.html');
-  res.render('about.html');
-};
+// const renHtml = async (req, res) => {
+//   res.render('home.html');
+//   res.render('sell.html');
+//   res.render('buy.html');
+//   res.render('about.html');
+// };
 const retrieveAllListings = async (req, res) => {
   const result = await ListingModel.getAllListings();
   // Print returned documents
