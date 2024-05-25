@@ -11,7 +11,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/listings", listingsRouter);
-// app.use("/", listingsRouter);
 app.use("/", publicPagesRouter);
 
 app.listen(port, () => {
