@@ -43,7 +43,6 @@ const postListing = async (req, res) => {
 module.exports = {
   retrieveAllListings,
   postListing,
-  renHtml
   // updateListing,
   // deleteListing,
 };
