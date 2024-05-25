@@ -52,6 +52,7 @@ let cardRow = document.createElement('div');
 container.classList.add('container-fluid');
 cardRow.classList.add('row', 'justify-content-center');
 
+let idCount = 1;
 function addCards(cards) {
     cards.forEach(card => {
 
@@ -70,16 +71,37 @@ function addCards(cards) {
                         <p class="card-text lead">Suburb: ${card.suburb}</p>
                         <p class="card-text lead">State: ${card.state}</p>
                         <p class="card-text lead">Area Code: ${card.acode}</p>
+
+                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#listing${idCount}">
+                            Click Me for Details
+                        </button>
                     </div>
                 </div>
         `;
         cardRow.appendChild(div);
+        offCanvas(idCount++, card.oname, card.oage, "Some Description of lsiting");
     });
 }
-//Append Everything at the end
-container.appendChild(cardRow);
-body.appendChild(container);
 
+container.appendChild(cardRow);
+
+function offCanvas(ID, oname, oage, description){
+    let offcanvas = document.createElement('div');
+    offcanvas.innerHTML = `
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="listing${ID}">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title">Listed by: ${oname} (${oage})</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                ${description}
+            </div>
+        </div>
+    `;
+    container.appendChild(offcanvas);
+}
+
+body.appendChild(container);
 const getCards = () => {
     $.get('/listings/', (response) => {
         if (response.statusCode == 200) {
