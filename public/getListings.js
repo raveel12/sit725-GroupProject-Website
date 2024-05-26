@@ -107,11 +107,19 @@ body.appendChild(container);
 const getCards = () => {
     $.get('/listings/', (response) => {
         if (response.statusCode == 200) {
-            addCards(response.data);
+            checkEmptyListings(response.data);
         }
     })
 }
-
+function checkEmptyListings(data) {
+    if (data == "") {
+        alert("Sorry! No listings yet!\nSTAYED TUNED FOR UPDATES");
+        location.replace("./home.html");
+    }
+    else {
+        addCards(data);
+    }
+}
 const filterListings = () => {
     const filterValue = document.getElementById('filter').value
     console.log(filterValue)
@@ -140,7 +148,7 @@ const filterListings = () => {
     }
 
     url += query;
-    $.get(url, (response)=>  {
+    $.get(url, (response) => {
         if (response.statusCode === 200) {
             cardRow.replaceChildren()
             addCards(response.data)
