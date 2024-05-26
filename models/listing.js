@@ -22,6 +22,9 @@ async function getAllListings(query) {
 async function addListing(data) {
   try {
     const listing = {
+      description: data.description,
+      ono: data.ono,
+      price: data.price,
       oname: data.oname,
       oage: parseInt(data.oage),
       hno: data.hno,
