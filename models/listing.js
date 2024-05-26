@@ -4,9 +4,15 @@ const { retrieveCollection } = require("../dbConnection");
 let collection;
 retrieveCollection().then((res) => (collection = res));
 
-async function getAllListings() {
+async function getAllListings(query) {
   try {
-    const result = await collection.find().toArray();
+    const mongoQuery = {};
+    if (query.gt === 'false') {
+      mongoQuery.price = { $lt: query.price };
+    } else if (query.gt === 'true') {
+      mongoQuery.price = { $gte: query.price };
+    }
+    const result = await collection.find(mongoQuery).toArray();
     return result;
   } catch (err) {
     console.error(err);
@@ -17,13 +23,14 @@ async function addListing(data) {
   try {
     const listing = {
       oname: data.oname,
-      oage: data.oage,
+      oage: parseInt(data.oage),
       hno: data.hno,
       street: data.street,
       suburb: data.suburb,
       state: data.state,
       acode: data.acode,
       path: data.path,
+      price: parseInt(data.price),
     };
     const result = await collection.insertOne(listing);
   } catch (err) {

@@ -20,8 +20,6 @@ async function runDBConnection() {
   }
 }
 
-runDBConnection();
-
 module.exports.retrieveCollection = async function () {
   if (!collection) {
     await runDBConnection();

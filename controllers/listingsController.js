@@ -1,6 +1,6 @@
 const ListingModel = require("../models/listing");
 const retrieveAllListings = async (req, res) => {
-  const result = await ListingModel.getAllListings();
+  const result = await ListingModel.getAllListings(req.query);
   // Print returned documents
 
   res.json({

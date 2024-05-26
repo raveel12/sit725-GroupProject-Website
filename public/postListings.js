@@ -7,7 +7,8 @@ function submitForm() {
         street: document.getElementById('street').value,
         suburb: document.getElementById('suburb').value,
         state: document.getElementById('state').value,
-        acode: document.getElementById('acode').value
+        acode: document.getElementById('acode').value,
+        price: document.getElementById('price').value
     };
     console.log("Form Submitted: ", formData);
     postListing(formData);

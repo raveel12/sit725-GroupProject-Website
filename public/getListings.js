@@ -71,6 +71,7 @@ function addCards(cards) {
                         <p class="card-text lead">Suburb: ${card.suburb}</p>
                         <p class="card-text lead">State: ${card.state}</p>
                         <p class="card-text lead">Area Code: ${card.acode}</p>
+                        <p class="card-text lead">Price (AUD): ${card.price}</p>
 
                         <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#listing${idCount}">
                             Click Me for Details
@@ -110,6 +111,29 @@ const getCards = () => {
     })
 }
 
+const filterListings = () => {
+    const filterValue = document.getElementById('filter').value
+    console.log(filterValue)
+    const gt = filterValue === '2';
+    const price = 40000;
+    const query = `?gt=${gt}&price=${price}`
+    let url = '/listings/'
+
+    // append query if user has selected above or below 40k
+    if (filterValue === '1' || filterValue === '2') { 
+        url += query
+    } 
+    $.get(url, (response)=>  {
+        if (response.statusCode === 200) {
+            cardRow.replaceChildren()
+            addCards(response.data)
+        }
+    })
+}
+
 $(document).ready(function () {
     getCards();
+    $("#filter-btn").click(() => {
+        filterListings();
+    });
 });

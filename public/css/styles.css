@@ -51,6 +51,10 @@
     width: 65px;
 }
 
+.btn.filter-btn {
+    height: 42px
+}
+
 @media (max-width: 601px) {
     .logoimg{
         height: 56px;
