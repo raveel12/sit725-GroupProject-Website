@@ -114,15 +114,31 @@ const getCards = () => {
 const filterListings = () => {
     const filterValue = document.getElementById('filter').value
     console.log(filterValue)
-    const gt = filterValue === '2';
-    const price = 40000;
-    const query = `?gt=${gt}&price=${price}`
+    let price, gt;
+    let query = '';
     let url = '/listings/'
 
-    // append query if user has selected above or below 40k
-    if (filterValue === '1' || filterValue === '2') { 
-        url += query
-    } 
+    switch (filterValue) {
+        case '1':
+            price = 100000;
+            gt = true;
+            query = `?gt=${gt}&price=${price}`
+            break;
+        case '2':
+            price = 50000;
+            gt = true;
+            query = `?gt=${gt}&price=${price}`
+            break;
+        case '3':
+            price = 50000;
+            gt = false;
+            query = `?gt=${gt}&price=${price}`
+            break;
+        default:
+            break;
+    }
+
+    url += query;
     $.get(url, (response)=>  {
         if (response.statusCode === 200) {
             cardRow.replaceChildren()

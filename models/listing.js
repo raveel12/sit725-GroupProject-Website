@@ -8,9 +8,9 @@ async function getAllListings(query) {
   try {
     const mongoQuery = {};
     if (query.gt === 'false') {
-      mongoQuery.price = { $lt: query.price };
+      mongoQuery.price = { $lt: parseInt(query.price) };
     } else if (query.gt === 'true') {
-      mongoQuery.price = { $gte: query.price };
+      mongoQuery.price = { $gte: parseInt(query.price) };
     }
     const result = await collection.find(mongoQuery).toArray();
     return result;
