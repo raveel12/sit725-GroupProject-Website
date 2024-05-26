@@ -78,4 +78,12 @@
 .form-row{
     margin: 0 5px
 }
-
+.details p{
+    font-size: 1rem;
+}
+.beige{
+    background-color: beige;
+}
+.details{
+    background-color: coral;
+}
