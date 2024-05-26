@@ -66,11 +66,14 @@ function addCards(cards) {
                         <h5 class="card-title text-center">Property Details</h5>
                         <p class="card-text lead">Owner Name: ${card.oname}</p>
                         <p class="card-text lead">Owner Age: ${card.oage}</p>
+                        <p class="card-text lead">Owner Contact: ${card.ono}</p>
+                        <p class="card-text lead">Listed Price: ${card.price}</p>
                         <p class="card-text lead">House No: ${card.hno}</p>
                         <p class="card-text lead">Street: ${card.street}</p>
                         <p class="card-text lead">Suburb: ${card.suburb}</p>
                         <p class="card-text lead">State: ${card.state}</p>
                         <p class="card-text lead">Area Code: ${card.acode}</p>
+                        <p class="card-text lead">Description: ${card.description}</p>
 
                         <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#listing${idCount}">
                             Click Me for Details
@@ -79,13 +82,13 @@ function addCards(cards) {
                 </div>
         `;
         cardRow.appendChild(div);
-        offCanvas(idCount++, card.oname, card.oage, "Some Description of lsiting");
+        offCanvas(idCount++, card.oname, card.oage, card.description);
     });
 }
 
 container.appendChild(cardRow);
 
-function offCanvas(ID, oname, oage, description){
+function offCanvas(ID, oname, oage, description) {
     let offcanvas = document.createElement('div');
     offcanvas.innerHTML = `
         <div class="offcanvas offcanvas-start" tabindex="-1" id="listing${ID}">
@@ -105,7 +108,13 @@ body.appendChild(container);
 const getCards = () => {
     $.get('/listings/', (response) => {
         if (response.statusCode == 200) {
-            addCards(response.data);
+            if (response.data == "") {
+                alert("Sorry! No listings yet\nSTAY TUNED")
+                location.replace("./home.html");
+            }
+            else {
+                addCards(response.data);
+            }
         }
     })
 }

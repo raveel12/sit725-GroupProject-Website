@@ -16,6 +16,9 @@ async function getAllListings() {
 async function addListing(data) {
   try {
     const listing = {
+      description: data.description,
+      ono: data.ono,
+      price: data.price,
       oname: data.oname,
       oage: data.oage,
       hno: data.hno,
