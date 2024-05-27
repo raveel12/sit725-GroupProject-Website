@@ -1,17 +1,18 @@
 # sit725-GroupProject-Website
 
-Introduction
+Introduction:
 Realty Ease is designed to provide a platform where users can list, browse, and communicate about properties. Key features include property tagging, advanced search with filtering options, and information sharing between buyers and sellers.
 
-Features
--Property Listing: Sellers can list their properties by filling out a detailed form.
--Tagging System: Properties can be tagged by price, location, and property type.
--Search and Filter: Buyers can search for properties and apply filters to find exactly what they need.
--Information Exchange: Buyers can contact sellers once they show interest in a property.
+Features:
+- Property Listing: Sellers can list their properties by filling out a detailed form.
+- Tagging System: Properties can be tagged by price, location, and property type.
+- Search and Filter: Buyers can search for properties and apply filters to find exactly what they need.
+- Information Exchange: Buyers can contact sellers once they show interest in a property.
 
 Installation:
--Node js and npm
--MongoDB
+- Node js and npm
+- MongoDB
+
 
 Steps to start the application:
 - First clone the repository from GitHub on your machine.
