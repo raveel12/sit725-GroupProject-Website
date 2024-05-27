@@ -32,22 +32,25 @@
                     <li><a href="home.html">HOME</a></li>
                     <li><a href="sell.html">SELL</a></li>
                     <li><a href="about.html">ABOUT US</a></li>
-                    <li><a href="#" class="btn-floating search pink"><i class="material-icons">search</i></a></li>
                 </ul>
             </div>
         </nav>
     </header>
     <h1 class="center-align">Our Services</h1>
-    <div class="input-group mb-3 w-25 p-3">
-        <select id="filter" class="form-select" aria-label="Default select example">
-            <option selected>Filter on price</option>
-            <option value="1">Price >= 100k AUD</option>
-            <option value="2">Price >= 50k AUD</option>
-            <option value="3">Price &lt50k AUD</option>
-            <option value="4">All</option>
-        </select>
-        <button class="btn btn-outline-secondary red accent-1 filter-btn" type="button" id="filter-btn">Filter</button>
+    <div class="container-fluid d-flex justify-content-end">
+        <div class="input-group mb-3 w-25 p-3">
+            <select id="filter" class="form-select" aria-label="Default select example">
+                <option selected>Filter on price</option>
+                <option value="1">Price >= 100k AUD</option>
+                <option value="2">Price >= 50k AUD</option>
+                <option value="3">Price &lt50k AUD</option>
+                <option value="4">All</option>
+            </select>
+            <button class="btn btn-outline-secondary red accent-1 filter-btn" type="button"
+                id="filter-btn">Filter</button>
+        </div>
     </div>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="./getListings.js"></script>
 </body>
 

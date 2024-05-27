@@ -1,7 +1,8 @@
-var express = require("express");
-
-var app = express();
-var port = process.env.PORT || 3000;
+const express = require("express");
+const app = express();
+const port = process.env.PORT || 3000;
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 
 const listingsRouter = require("./routes/listings");
 const publicPagesRouter = require("./routes/publicPages");
@@ -13,6 +14,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/listings", listingsRouter);
 app.use("/", publicPagesRouter);
 
-app.listen(port, () => {
+// Socket.IO logic
+io.on('connection', (socket) => {
+  console.log('A User Connected');
+
+  socket.on('disconnect', () => {
+    console.log('User disconnected');
+  });
+  socket.on('Client', (msg) => {
+    console.log(msg)
+  })
+  io.emit('success', `You have successfully connected to our server!\n
+  Continue browsing our services :)`)
+});
+
+http.listen(port, () => {
   console.log("App listening to: " + port);
 });

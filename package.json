@@ -19,6 +19,7 @@
   "homepage": "https://github.com/raveel12/sit725-GroupProject-Website#readme",
   "dependencies": {
     "express": "^4.19.2",
-    "mongodb": "^6.6.2"
+    "mongodb": "^6.6.2",
+    "socket.io": "^4.7.5"
   }
 }

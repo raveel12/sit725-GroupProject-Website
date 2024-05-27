@@ -1,3 +1,4 @@
+const socket = io();
 function submitForm() {
     let formData = {
         oname: document.getElementById('oname').value,
@@ -142,7 +143,10 @@ function validateAndSubmitForm() {
         return false; // Prevent the form submission if validation fails
     }
 }
-
+const sellPage = `\nYou're on Sell Page`
+socket.on('success', (msg) => {
+    console.log('Server Said: ' + msg + sellPage);
+})
 const postListing = (formData) => {
     $.post('/listings/', formData);
 }
