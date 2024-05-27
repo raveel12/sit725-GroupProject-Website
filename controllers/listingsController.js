@@ -6,7 +6,7 @@ const retrieveAllListings = async (req, res) => {
   res.json({
     statusCode: 200,
     data: result,
-    message: "get all listings success",
+    message: "Get All Listings Successful!",
   });
 };
 
@@ -14,7 +14,7 @@ const postListing = async (req, res) => {
   await ListingModel.addListing(req.body);
   res.json({
     statusCode: 200,
-    message: "post a listing success",
+    message: "Post a Listing Successful!",
   });
 };
 

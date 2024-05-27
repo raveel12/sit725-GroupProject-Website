@@ -13,7 +13,6 @@ function submitForm() {
         acode: document.getElementById('acode').value,
         description: document.getElementById('description').value,
     };
-    console.log("Form Submitted: ", formData);
     alert("Property Listing Submitted Successfully!");
     postListing(formData);
     location.replace("./buy.html")
