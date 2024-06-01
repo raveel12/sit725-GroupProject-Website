@@ -8,8 +8,6 @@ It is a website where buying and selling property made ease.
 
 -Property Listing: Sellers can list their properties by filling out a detailed form.
 
--Tagging System: Properties can be tagged by price, location, and property type.
-
 -Search and Filter: Buyers can search for properties and apply filters to find exactly what they need.
 
 -Information Exchange: Buyers can contact sellers once they show interest in a property.
@@ -18,7 +16,6 @@ It is a website where buying and selling property made ease.
 Install Realty Ease with npm
 
 ```bash
-  nvm install -lts
   npm install express
   npm install mongodb
 ```
